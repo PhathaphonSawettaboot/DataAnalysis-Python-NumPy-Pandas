@@ -1,12 +1,13 @@
 import pandas as pd
 
-data = {'Name': ['Alice', 'Bob', 'Cathy', 'David'],
-        'Age': [25, None, 30, 28]}
+data = {'A' : [1,2,3],
+        'B' : [4,5,6],
+        'C' : [7,8,9]}
 
 df = pd.DataFrame(data)
 
-df['Age'].fillna(0, inplace=True)  # Replace with 0
+column_sums = df.sum(axis=0)
+print("Column : ", column_sums)
 
-
-
-print(df)
+row_sums = df.sum(axis=1)
+print("Row Sums: ", row_sums)
