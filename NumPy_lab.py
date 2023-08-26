@@ -1,12 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-categories = ['A', 'B', 'C', 'D', 'E']
-values = [10, 25, 12, 40, 30]
+sizes = [15, 30, 45, 10]
 
-plt.bar(categories, values, color= 'orange')
-plt.xlabel('Categories')
-plt.ylabel('Values')
-plt.title('Line Plot')
+plt.boxplot(sizes)
+plt.ylabel('Value')
 plt.grid(True)
 plt.show()
