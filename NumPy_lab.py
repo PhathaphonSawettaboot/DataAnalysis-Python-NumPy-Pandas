@@ -1,20 +1,12 @@
-import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 
-# Sample data
-employees_data = {'Employee_ID': [101, 102, 103, 104],
-                  'Name': ['Alice', 'Bob', 'Charlie', 'David'],
-                  'Department': ['HR', 'Finance', 'IT', 'Marketing']}
-salaries_data = {'Employee_ID': [102, 103, 105, 106],
-                 'Salary': [50000, 60000, 55000, 62000]}
+x = [1, 2, 3, 4, 5]
+y = [10, 25, 12, 40, 30]
 
-employees = pd.DataFrame(employees_data)
-salaries = pd.DataFrame(salaries_data)
-
-inner_merge = pd.merge(employees, salaries, on = 'Employee_ID', how = 'inner')
-print(inner_merge)
-
-inner_merge = pd.merge(employees, salaries, on = 'Employee_ID', how = 'outer')
-print(inner_merge)
-
-inner_merge = pd.merge(employees, salaries, on = 'Employee_ID', how = 'right')
-print(inner_merge)
+plt.scatter(x, y,color= 'pink', marker='o')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.title('Line Plot')
+plt.grid(True)
+plt.show()
