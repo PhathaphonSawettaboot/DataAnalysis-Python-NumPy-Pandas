@@ -1,12 +1,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-x = [1, 2, 3, 4, 5]
-y = [10, 25, 12, 40, 30]
+categories = ['A', 'B', 'C', 'D', 'E']
+values = [10, 25, 12, 40, 30]
 
-plt.scatter(x, y,color= 'pink', marker='o')
-plt.xlabel('X-axis')
-plt.ylabel('Y-axis')
+plt.bar(categories, values, color= 'orange')
+plt.xlabel('Categories')
+plt.ylabel('Values')
 plt.title('Line Plot')
 plt.grid(True)
 plt.show()
