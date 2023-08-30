@@ -1,21 +1,22 @@
-import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
+import numpy as np
 
-# Create a sample DataFrame
-data = {
-    'A': [1, 2, 3, 4, 5],
-    'B': [5, 4, 3, 2, 1],
-    'C': [3, 3, 3, 3, 3]
-}
-df = pd.DataFrame(data)
+# Generate some sample data
+x = np.linspace(0, 10, 100)
+y1 = np.sin(x)
+y2 = np.cos(x)
 
-# Calculate the correlation matrix
-correlation_matrix = df.corr()
+# Create a plot
+plt.plot(x, y1, label='Sine Function')
+plt.plot(x, y2, label='Cosine Function')
 
-# Create a heatmap using Seaborn
-plt.figure(figsize=(8, 6))
-sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', center=0)
-plt.title('Correlation Heatmap')
-plt.grid(True)
+# Add a legend
+plt.legend()
+
+# Add labels and title
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.title('Sine and Cosine Functions')
+
+# Show the plot
 plt.show()
