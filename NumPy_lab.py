@@ -1,21 +1,18 @@
-import pandas as pd
-import seaborn as sns
+import numpy as np
 import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
 
-# Create a sample DataFrame
-data = {
-    'Age': [25, 30, 35, 40, 45],
-    'Income': [50000, 60000, 75000, 90000, 100000],
-    'Savings': [10000, 15000, 20000, 25000, 30000],
-    'Spending': [3000, 4000, 4500, 5000, 5500]
-}
-df = pd.DataFrame(data)
+X = np.array([[1],[2],[3],[4],[5]])
+y = np.array([2,3.4,5,6.5,8])
 
-# Calculate the correlation matrix
-correlation_matrix = df.corr()
+model = LinearRegression()
+model.fit(X,y)
 
-# Create the heatmap
-plt.figure(figsize=(10, 8))
-sns.heatmap(correlation_matrix, annot=True, cmap="coolwarm")
-plt.title("Correlation Matrix Heatmap")
+predictions = model.predict(X)
+
+plt.scatter(X,y, label='Data')
+plt.plot(X, predictions, color='red', label='Linear Regression')
+plt.xlabel('X')
+plt.ylabel('y')
+plt.legend()
 plt.show()
