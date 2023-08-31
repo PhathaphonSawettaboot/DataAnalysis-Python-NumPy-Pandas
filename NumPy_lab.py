@@ -1,22 +1,12 @@
-import matplotlib.pyplot as plt
-import numpy as np
+import pandas as pd
 
-# Generate some sample data
-x = np.linspace(0, 10, 100)
-y1 = np.sin(x)
-y2 = np.cos(x)
+# Creating a DataFrame with duplicates
+data = {'Name': ['Alice', 'Bob', 'Alice', 'David'],
+        'Age': [25, 30, 25, 22]}
+df = pd.DataFrame(data)
 
-# Create a plot
-plt.plot(x, y1, label='Sine Function')
-plt.plot(x, y2, label='Cosine Function')
+# Check for duplicates
+print(df.duplicated())
 
-# Add a legend
-plt.legend()
-
-# Add labels and title
-plt.xlabel('X-axis')
-plt.ylabel('Y-axis')
-plt.title('Sine and Cosine Functions')
-
-# Show the plot
-plt.show()
+# Drop duplicates
+df.drop_duplicates(inplace=True)
